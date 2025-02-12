@@ -15,6 +15,7 @@ Also see the linear quadratic regulator code for this task - [MuJoCo humanoid ba
 
 # TODO
 
-- Try to add penalties/rewards so that the feet are alligned heet-to-toe
+- Try to add penalties/rewards so that the feet are alligned heet-to-toe,
+- Will need to change the target pose for standing on one leg, now with heel-to-toe,
 - Try to make the task dynamic, so the humanoid spends 5 seconds balancing on one foot, and then the other, etc... 
 - Try SAC instead of PPO - the code is in this Colab - https://colab.research.google.com/github/google-deepmind/mujoco_playground/blob/main/learning/notebooks/dm_control_suite.ipynb
