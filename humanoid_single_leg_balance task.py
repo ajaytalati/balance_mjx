@@ -401,10 +401,30 @@ video_path = "/home/ajay/Python_Projects/mujoco-mjx/trainned_PPO_policy.mp4"
 media.write_video(video_path, frames, fps=1.0 / env.dt / render_every)
 print(f"Video saved as: {video_path}")
 
+# %% Convert MP4 to GIF
 
+import os
+import imageio
+import numpy as np
+from PIL import Image
 
+def mp4_to_gif(mp4_path, gif_path, fps=20, scale=480):
+    """Converts an MP4 video to a GIF."""
+    reader = imageio.get_reader(mp4_path, 'ffmpeg')
+    writer = imageio.get_writer(gif_path, fps=fps)
 
+    for i, frame in enumerate(reader):
+        img = Image.fromarray(frame)
+        img = img.resize((scale, int(img.height * scale / img.width)), Image.LANCZOS)
+        writer.append_data(np.array(img))
+    
+    writer.close()
+    print(f"✅ GIF saved at: {gif_path}")
 
+# Example usage:
+mp4_file = video_path #"input.mp4"  # Change this to your MP4 file
+gif_file = "/home/ajay/Python_Projects/mujoco-mjx/trainned_PPO_policy.gif"
+mp4_to_gif(mp4_file, gif_file, fps=20, scale=480)
 
 
 # %% SAC took 6 hours !!!!
