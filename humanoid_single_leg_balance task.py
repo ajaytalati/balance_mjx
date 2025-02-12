@@ -393,13 +393,37 @@ for i in range(n_steps):
 
 import mediapy as media
 
-# Generate frames
+# Generate frames - side view
 frames = env.render(rollout[::render_every], camera='side')
 # Define video file path
-video_path = "/home/ajay/Python_Projects/mujoco-mjx/trainned_PPO_policy.mp4"
+video_path = "/home/ajay/Python_Projects/mujoco-mjx/trainned_PPO_policy_side_view.mp4"
 # Save frames as an MP4 video
 media.write_video(video_path, frames, fps=1.0 / env.dt / render_every)
 print(f"Video saved as: {video_path}")
+
+# Generate frames - back view
+frames_back_view = env.render(rollout[::render_every], camera='back')
+# Define video file path
+video_path_back_view = "/home/ajay/Python_Projects/mujoco-mjx/trainned_PPO_policy_back_view.mp4"
+# Save frames as an MP4 video
+media.write_video(video_path_back_view, frames_back_view, fps=1.0 / env.dt / render_every)
+print(f"Video saved as: {video_path_back_view}")
+
+# Generate frames - overhead view
+frames_overhead_view = env.render(rollout[::render_every], camera='overhead')
+# Define video file path
+video_path_overhead_view = "/home/ajay/Python_Projects/mujoco-mjx/trainned_PPO_policy_overhead_view.mp4"
+# Save frames as an MP4 video
+media.write_video(video_path_overhead_view, frames_overhead_view, fps=1.0 / env.dt / render_every)
+print(f"Video saved as: {video_path_overhead_view}")
+
+# Generate frames - front view
+frames_front_view = env.render(rollout[::render_every], camera='front')
+# Define video file path
+video_path_front_view = "/home/ajay/Python_Projects/mujoco-mjx/trainned_PPO_policy_front_view.mp4"
+# Save frames as an MP4 video
+media.write_video(video_path_front_view, frames_front_view, fps=1.0 / env.dt / render_every)
+print(f"Video saved as: {video_path_front_view}")
 
 # %% Convert MP4 to GIF
 
@@ -422,8 +446,8 @@ def mp4_to_gif(mp4_path, gif_path, fps=20, scale=480):
     print(f"✅ GIF saved at: {gif_path}")
 
 # Example usage:
-mp4_file = video_path #"input.mp4"  # Change this to your MP4 file
-gif_file = "/home/ajay/Python_Projects/mujoco-mjx/trainned_PPO_policy.gif"
+mp4_file = video_path_overhead_view #"input.mp4"  # Change this to your MP4 file
+gif_file = "/home/ajay/Python_Projects/mujoco-mjx/trainned_PPO_policy_back_overhead.gif"
 mp4_to_gif(mp4_file, gif_file, fps=20, scale=480)
 
 
