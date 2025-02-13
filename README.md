@@ -21,10 +21,5 @@ Also see the linear quadratic regulator code for this task - [MuJoCo humanoid ba
 
 At the moment it runs forward, but wobbles off line ???
 
-![Humanoid Balancing](https://github.com/ajaytalati/balance_mjx/blob/main/videos/straight_line_run_task/trainned_PPO_policy_overhead_view.gif)
+![Humanoid Balancing](https://github.com/ajaytalati/balance_mjx/blob/main/videos/straight_line_run_task/trainned_PPO_policy_overhead.gif)
 
-![Humanoid Balancing_front_view](https://github.com/ajaytalati/balance_mjx/blob/main/videos/straight_line_run_task/trainned_PPO_policy_front_view.gif)
-
-![Humanoid Balancing_overhead_view](https://github.com/ajaytalati/balance_mjx/blob/main/videos/straight_line_run_task/trainned_PPO_policy_side_view.gif)
-
-![Humanoid Balancing_back_view](https://github.com/ajaytalati/balance_mjx/blob/main/videos/straight_line_run_task/trainned_PPO_policy_back_view.gif)
